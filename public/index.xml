@@ -6,10 +6,23 @@
     <description>Recent content on Jin Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About Me</title>
+      <link>/about/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Hi, I&amp;rsquo;m Jin Chen! I graduated from Drexel University in 2020 with a degree in Mangement Information Systems. I also minored in Politics and History. I began this website while learning R and stumbling across blogdown.
+I use this website to write about whatever&amp;rsquo;s on my mind. This includes my life, learning R, and anything from politics to international relations and productivity.
+Currently:
+📗 Reading Prisoners of Geography
+🌱 Learning R with applications to business analytics and the social sciences especially in visualizing politics and policy.</description>
+    </item>
     
     <item>
       <title>Markdown Syntax</title>
@@ -20,16 +33,6 @@
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
 &lt;h2 id=&#34;headings&#34;&gt;Headings&lt;/h2&gt;
 &lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>About Hugo</title>
-      <link>/about/</link>
-      <pubDate>Sat, 11 Apr 2020 19:15:32 +0800</pubDate>
-      
-      <guid>/about/</guid>
-      <description>THis is a test for the ABOUT Page
- https://github.com/yuin/goldmark https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  </description>
     </item>
     
     <item>
