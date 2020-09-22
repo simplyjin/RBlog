@@ -1,16 +1,19 @@
 ---
-title: Explorations into World Life Expectancy Data
+title: Part I - WHO Life Expectancy Data - Data Exploration
 author: Jin Chen
 date: '2020-09-21'
 categories:
   - R
 tags:
   - project
-slug: explorations-into-world-life-expectancy-data
+slug: part-i-who-world-life-expectancy-data
 output:
   blogdown::html_page:
-      toc: TRUE
-description: 'I am hoping to understand how health factors and government spending affect life expectancy around the world. Specifically, I hope to answer whether expenditure on health and levels of alcohol consumption predict age of life expectancy in countries around the world.'
+    toc: yes
+description: I am hoping to understand how health factors and government spending
+  affect life expectancy around the world. Specifically, I hope to answer whether
+  expenditure on health and levels of alcohol consumption predict age of life expectancy
+  in countries around the world.
 ---
 
 
