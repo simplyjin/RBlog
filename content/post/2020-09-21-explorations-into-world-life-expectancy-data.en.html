@@ -1,0 +1,113 @@
+---
+title: Explorations into World Life Expectancy Data
+author: Jin Chen
+date: '2020-09-21'
+categories:
+  - R
+tags:
+  - project
+slug: explorations-into-world-life-expectancy-data
+output:
+  blogdown::html_page:
+      toc: TRUE
+description: 'I am hoping to understand how health factors and government spending affect life expectancy around the world. Specifically, I hope to answer whether expenditure on health and levels of alcohol consumption predict age of life expectancy in countries around the world.'
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#big-picture">Big Picture</a><ul>
+<li><a href="#research-question">Research Question</a></li>
+<li><a href="#description-of-data">Description of data</a></li>
+<li><a href="#load-data">Load data</a></li>
+<li><a href="#explore-data">Explore Data</a></li>
+</ul></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#observational-units">Observational units</a></li>
+<li><a href="#preview-data">Preview Data</a></li>
+</ul>
+</div>
+
+<div id="big-picture" class="section level1">
+<h1>Big Picture</h1>
+<div id="research-question" class="section level2">
+<h2>Research Question</h2>
+<p>I am hoping to understand how health factors and government spending affect life expectancy around the world. Specifically, I hope to answer whether expenditure on health and levels of alcohol consumption predict age of life expectancy in countries around the world.</p>
+</div>
+<div id="description-of-data" class="section level2">
+<h2>Description of data</h2>
+<p>The data set includes a variety of immunization, mortality, economic and social factors from 2000 - 2015 in 193 countries. The dataset was downloaded from Kaggle <a href="https://www.kaggle.com/kumarajarshi/life-expectancy-who">here</a> and is a combined from several datasets from the World Health Organization and the United Nations website.</p>
+</div>
+<div id="load-data" class="section level2">
+<h2>Load data</h2>
+<pre class="r"><code>library(tidyverse)
+library(janitor)
+library(skimr)
+
+data_raw &lt;- read_csv(&quot;https://raw.githubusercontent.com/simplyjin/ModernDive/master/data/life_data.csv&quot;)
+
+#Clean variable names
+data_raw &lt;- data_raw %&gt;% 
+  clean_names()</code></pre>
+</div>
+<div id="explore-data" class="section level2">
+<h2>Explore Data</h2>
+<pre class="r"><code>glimpse(data_raw)
+skim(data_raw)</code></pre>
+<p>There are 10 NA’s for life expectancy, 194 for alcohol, and 0 for expenditure. The NA’s will require further investigation when I make a final data frame for analysis.</p>
+</div>
+</div>
+<div id="variables" class="section level1">
+<h1>Variables</h1>
+<p>The <strong>identification</strong> variable is defined by the combination of the <code>country</code> and <code>year</code> variables.</p>
+<p>The <strong>outcome</strong> variable is called <code>life_expectancy</code> per row.</p>
+<p>The <strong>numerical</strong> variable is called <code>percentage_expenditure</code> which is the expenditure on health as a percentage of GDP per capita per country per year.</p>
+<p>I feel that this data set does not provide an appropriate <strong>categorical</strong> variable for this analysis so I will be creating a variable <code>alcohol_group</code> based on the numerical variable <code>alcohol</code>. <code>alcohol</code> measures the per capita consumption in liters of pure alcohol. I will divide <code>alcohol</code> into three equally sized levels of: <code>Low</code>, <code>Medium</code>, and <code>High</code>.</p>
+</div>
+<div id="observational-units" class="section level1">
+<h1>Observational units</h1>
+<p>Each row in this data set will represent a country from each year between 2000 and 2015. The data set has 2938 rows representing 193 unique countries.</p>
+</div>
+<div id="preview-data" class="section level1">
+<h1>Preview Data</h1>
+<p>I will create a new data frame including only the variables that will be required in the analysis as well as filtering out rows based on the investigation into NA values. Next,I will create the alcohol group levels. Finally I will sample the resulting data frame.</p>
+<pre class="r"><code>data_raw %&gt;% 
+  select(country, year, life_expectancy, alcohol, percentage_expenditure) %&gt;% 
+  filter(is.na(life_expectancy))
+
+data_raw %&gt;% 
+  select(country, year, life_expectancy, alcohol, percentage_expenditure) %&gt;% 
+  filter(is.na(alcohol))</code></pre>
+<p>The data set has missing values for <code>life_expectancy</code> in 2013 for 10 countries. They seem to be small island nations. Thus I believe that these can be filtered out in my analysis.</p>
+<p>The data set also has missing values for <code>alcohol</code> in 2015 for it appears every country. Furthermore, for 2015 many countries have a <code>percentage_expenditure</code> of 0. Thus the final analysis I will only use data from the years 2000 - 2014. Montenegro and South Sudan also have missing data so these two will also be removed.</p>
+<pre class="r"><code>#countries to remove based on NA life_expectancy
+data_countries &lt;- data_raw %&gt;% 
+  select(country, year, life_expectancy, alcohol, percentage_expenditure) %&gt;% 
+  filter(is.na(life_expectancy))
+
+# double check that 10 countries should be removed
+# data_raw %&gt;% 
+#   filter(country %in% data_countries$country)
+
+data_analysis &lt;- data_raw %&gt;% 
+  select(country, year, life_expectancy, alcohol, percentage_expenditure) %&gt;% 
+  filter(!country %in% data_countries$country,
+         !country %in% c(&quot;Montenegro&quot;, &quot;South Sudan&quot;),
+         year != 2015) %&gt;% 
+  mutate(
+    alcohol_size = cut_number(alcohol, n = 3),
+    size = recode_factor(alcohol_size, &quot;[0.01,1.67]&quot; = &quot;Low&quot;, &quot;(1.67,6.4]&quot; = &quot;Medium&quot;, &quot;(6.4,17.9]&quot; = &quot;High&quot;)
+        )</code></pre>
+<p>Lets sample 5 rows on the resulting data frame that will be used in the final analysis</p>
+<pre class="r"><code>set.seed(274) #for reproducibility
+data_analysis %&gt;% 
+  sample_n(5)</code></pre>
+<pre><code>## # A tibble: 5 x 7
+##   country      year life_expectancy alcohol percentage_expen~ alcohol_size size 
+##   &lt;chr&gt;       &lt;dbl&gt;           &lt;dbl&gt;   &lt;dbl&gt;             &lt;dbl&gt; &lt;fct&gt;        &lt;fct&gt;
+## 1 Botswana     2008            57.5    6.56            477.   (6.4,17.9]   High 
+## 2 Timor-Leste  2009            66.6    0.09             36.2  [0.01,1.67]  Low  
+## 3 Saint Vinc~  2005            71.4    6.04              0    (1.67,6.4]   Medi~
+## 4 Turkey       2004            72      1.35              1.13 [0.01,1.67]  Low  
+## 5 Saint Lucia  2006            73.5   13.4               0    (6.4,17.9]   High</code></pre>
+</div>

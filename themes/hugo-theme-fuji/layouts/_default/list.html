@@ -10,7 +10,12 @@
         {{ partial "post-meta.html" . }}
     </div>
     <div class="post-item post-summary markdown-body">
-        {{ .Summary }}
+    {{ with .Description }}
+      {{ $.Scratch.Set "summary" (markdownify .) }}
+    {{ else }}
+      {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
+    {{ end }}
+    {{ $.Scratch.Get "summary" }}
     </div>
 </div>
 {{ end }}

@@ -24,6 +24,8 @@ paginate = 10
 [params]
   author = "Jin Chen" # You can also set author in post front matter individually
   subTitle = "Always Be Compounding"
+  summary_length = 300 #9/22/20 edition for default max length of post summaries on homepage from Yihui's addition
+
 
   # Use CloudFlare Workers to accelerate the Google Analytics
   # If you are using this please comment the googleAnalytics above
@@ -37,11 +39,11 @@ paginate = 10
 
   # Word counter and read time indicator in post metadata
   showWordCounter = true
-  showReadTime = false
+  showReadTime = true
 
   # License at the end of each post
   showLicense = false
-  showToc = true
+  showToc = false
 
   # Open Graph & Twitter Card variables
   # You can also set description and images in post front matter individually

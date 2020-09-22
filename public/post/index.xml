@@ -6,43 +6,19 @@
     <description>Recent content in Posts on Jin Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Markdown Syntax</title>
-      <link>/post/markdown-syntax/</link>
-      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <title>Explorations into World Life Expectancy Data</title>
+      <link>/post/2020-09-21-explorations-into-world-life-expectancy-data/</link>
+      <pubDate>Mon, 21 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/markdown-syntax/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
-&lt;h2 id=&#34;headings&#34;&gt;Headings&lt;/h2&gt;
-&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Emoji Support</title>
-      <link>/post/emoji-support/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/emoji-support/</guid>
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://gohugo.io/functions/emojify/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;emojify&lt;/code&gt;&lt;/a&gt; function can be called directly in templates or &lt;a href=&#34;https://gohugo.io/templates/shortcode-templates/#inline-shortcodes&#34; target=&#34;_blank&#34;&gt;Inline Shortcodes&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To enable emoji globally, set &lt;code&gt;enableEmoji&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in your site’s &lt;a href=&#34;https://gohugo.io/getting-started/configuration/&#34; target=&#34;_blank&#34;&gt;configuration&lt;/a&gt; and then you can type emoji shorthand codes directly in content files; e.g.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;:s ee_no_evil:[Remove the space]&lt;/code&gt; 🙈 &lt;code&gt;:h ear_no_evil:[Remove the space]&lt;/code&gt; 🙉 &lt;code&gt;:s peak_no_evil:[Remove the space]&lt;/code&gt; 🙊&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.:19.0 3rd Qu.: 56.00 ## Max. :25.0 Max. :120.00fit &amp;lt;- lm(dist ~ speed, data = cars)fit## ## Call:## lm(formula = dist ~ speed, data = cars)## ## Coefficients:## (Intercept) speed ## -17.</description>
+      <guid>/post/2020-09-21-explorations-into-world-life-expectancy-data/</guid>
+      <description>Big PictureResearch QuestionDescription of dataLoad dataExplore DataVariablesObservational unitsPreview DataBig PictureResearch QuestionI am hoping to understand how health factors and government spending affect life expectancy around the world. Specifically, I hope to answer whether expenditure on health and levels of alcohol consumption predict age of life expectancy in countries around the world.
+Description of dataThe data set includes a variety of immunization, mortality, economic and social factors from 2000 - 2015 in 193 countries. The dataset was downloaded from Kaggle here and is a combined from several datasets from the World Health Organization and the United Nations website.</description>
     </item>
     
   </channel>
