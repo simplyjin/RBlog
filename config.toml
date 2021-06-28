@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "Jin Chen"
+title = "Simply Jin"
 theme = "hugo-theme-fuji"
 hasCJKLanguage = true
 enableEmoji = true
@@ -22,7 +22,7 @@ paginate = 10
   post = "/:section/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
 
 [params]
-  author = "Jin Chen" # You can also set author in post front matter individually
+  author = "Simply Jin" # You can also set author in post front matter individually
   subTitle = "Always Be Compounding"
   summary_length = 300 #9/22/20 edition for default max length of post summaries on homepage from Yihui's addition
 

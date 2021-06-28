@@ -1,6 +1,6 @@
 ---
 date: "2020-07-31"
-description: About Jin Chen
+description: About Me
 tags:
 - personal
 noLicense: true
