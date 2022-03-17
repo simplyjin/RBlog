@@ -121,5 +121,5 @@ paginate = 10
 
   [[menu.link]]
     name = "GitHub"
-    url = "https://github.com/simplyjin"
+    url = "https://github.com"
     weight = 1
