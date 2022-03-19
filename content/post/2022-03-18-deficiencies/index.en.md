@@ -8,7 +8,7 @@ tags:
   - personal
 ---
 
-![](images/overcome.jpg)
+![](images/cut.jpg)
 
 I recently attended an ice skating and remembered a valuable lesson that OCS had taught me. It was one of the toughest lessons I had to learn and 2 years later it was still applicable in my life. 
 
